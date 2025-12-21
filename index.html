@@ -223,9 +223,9 @@ function checkQuiz() {
   const q3 = document.getElementById("q3").value.toLowerCase();
   let feedback = "";
 
-  feedback += q1.includes("fer") ? "✅ Q1: Bravo! " : "❌ Q1: Essayez encore. ";
-  feedback += q2.includes("efficace") || q2.includes("fission") ? "✅ Q2: Bravo! " : "❌ Q2: Essayez encore. ";
-  feedback += q3.includes("univers") || q3.includes("éléments") ? "✅ Q3: Bravo! " : "❌ Q3: Essayez encore. ";
+  feedback += q1.includes("fer") || q1.includes("stable") ? "✅ Q1: Bravo! " : "❌ Q1: Essayez encore. Consulte l'annexe pour plus d'informations. ";
+  feedback += q2.includes("efficace") || q2.includes("fission") ? "✅ Q2: Bravo! " : "❌ Q2: Essayez encore. Consulte l'annexe pour plus d'informations. ";
+  feedback += q3.includes("univers") || q3.includes("éléments") ? "✅ Q3: Bravo! " : "❌ Q3: Essayez encore. Consulte l'annexe pour plus d'informations. ";
 
   document.getElementById("feedback").innerText = feedback;
 }

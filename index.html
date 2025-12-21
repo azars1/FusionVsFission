@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fusion vs Fission - Projet Physique</title>
+<style>
+  body { font-family: Arial, sans-serif; background-color: #ffe6f0; padding: 20px; color: #330022; }
+  h1, h2 { color: #b30059; }
+  nav { margin-bottom: 20px; }
+  nav button { margin-right: 10px; padding: 8px 12px; background-color: #b30059; color: white; border: none; cursor: pointer; border-radius: 5px; }
+  nav button:hover { background-color: #d6336c; }
+  .section { display: none; margin-top: 20px; }
+  .active { display: block; }
+  .quiz-question { margin-bottom: 15px; }
+  .btn { background-color: #b30059; color: white; padding: 6px 10px; border: none; cursor: pointer; border-radius: 5px; }
+  .btn:hover { background-color: #d6336c; }
+  #feedback, #feedbackA, #feedbackB { margin-top: 10px; font-weight: bold; }
+  code { background-color: #ffd6e8; padding: 2px 4px; border-radius: 4px; display: block; margin-bottom: 10px; }
+  p { line-height: 1.6; margin-bottom: 15px; }
+</style>
+</head>
+<body>
+
+<h1>Fusion vs Fission - Projet Physique</h1>
+
+<nav>
+  <button onclick="showSection('intro')">Introduction</button>
+  <button onclick="showSection('calculs')">Calculs d'Énergie</button>
+  <button onclick="showSection('quiz')">Quiz</button>
+  <button onclick="showSection('annex')">Annexes</button>
+</nav>
+
+<!-- INTRODUCTION -->
+<div id="intro" class="section active">
+  <h2>Introduction</h2>
+  <p>La physique nucléaire étudie les réactions qui modifient le noyau des atomes. Parmi ces réactions, deux se distinguent particulièrement par leur potentiel énergétique : la fusion et la fission.</p>
+  <p>La <strong>fusion nucléaire</strong> consiste à combiner des noyaux légers, comme l’hydrogène, pour former un noyau plus lourd tel que l’hélium, ce qui libère une grande quantité d’énergie. Ce processus alimente les étoiles.</p>
+  <p>La <strong>fission nucléaire</strong> consiste à scinder un noyau lourd, comme l’uranium-235, en noyaux plus légers, libérant des neutrons et de l’énergie. Les réacteurs nucléaires utilisent principalement la fission car elle est plus facile à contrôler sur Terre.</p>
+  <p>Ce site vous permettra d’explorer ces réactions, de tester vos connaissances grâce à un quiz interactif et de consulter vos calculs détaillés dans l’annexe.</p>
+</div>
+
+<!-- ENERGY CALCULATIONS -->
+<div id="calculs" class="section">
+  <h2>Calculs d'Énergie</h2>
+  
+   <!-- PARTIE A -->
+  <h3>Partie A - Fission de l'Uranium</h3>
+  <p>La fission de l’U-238 se produit lorsqu’un neutron frappe un noyau, le divisant en plusieures noyaux plus légers et libérant de l’énergie. Voici un exemple de réaction chimique de la fission: </p>
+  <code>U-238 → Fe-58 + 45(⍺) + 24(e- + Ve-)</code>
+  <p>Utilise les étapes ci-dessous pour calculer l'énergie libiré et la vitesse de la fer lors dela désintégration d'un kilogramme de materiel.</p>
+  <p>1️⃣ E_noyau = ∆mc²</p>
+ <code>∆m = masse<sub>Uranium</sub> - masse<sub>Fer</sub> - masse<sub>⍺(mHélium)</sub> - masse<sub>ß(mÉlectron)</sub></code>
+ 
+  <p><i>Note: il faut convertir le différenciel de masse en kg pour utiliser les formules d'énergie. Multiplie votre réponse par 10⁻³.</i> </p> 
+ <code>c = 3x10⁸</code>
+
+<p>2️⃣ Énergie<sub>totale</sub> = N x E_noyau</p>
+  <code>N = masse (en g) ÷ masse Molaire</code>
+ 
+<p>3️⃣ Vitesse des particules</p>
+<p>E = ½ mv² → v = √(2|E|/m)</p>
+<p><em>Note: On utilise la valeur absolue de l’énergie libérée, car l’énergie cinétique est toujours positive.</em></p>
+
+<p>Entrez la vitesse estimée des fragments de fission :</p>
+<input type="text" id="speedA" placeholder="Votre réponse en m/s">
+<button class="btn" onclick="checkSpeedA()">Vérifier</button>
+<p id="feedbackSpeedA"></p>
+
+  
+  <p>Devinez l’énergie totale libérée pour 1 kg d’uranium :</p>
+  <input type="text" id="energyA" placeholder="Votre réponse en Joules">
+  <button class="btn" onclick="checkEnergyA()">Vérifier</button>
+  <p id="feedbackA"></p>
+
+  <!-- PARTIE B -->
+  <!-- PARTIE B -->
+<!-- PARTIE B -->
+<h3>Partie B - Fusion de l'Hydrogène</h3>
+
+<p>La fusion nucléaire consiste à assembler plusieurs noyaux légers pour former un noyau plus lourd.
+Dans cette réaction, des noyaux d’hydrogène fusionnent pour former du fer-56,
+ce qui libère une grande quantité d’énergie.</p>
+
+<code>56 H → Fe-56 + 30(e⁻ + ν<sub>e</sub>⁻)</code>
+
+<p>Utilise les étapes suivantes pour calculer l’énergie libérée et la vitesse des particules.</p>
+
+<p>1️⃣ Énergie libérée par noyau</p>
+<code>Énergie<sub>noyau</sub> = Δm c²</code>
+<p><i>Note : convertir la masse en kg avant d’utiliser la formule.</i></p>
+
+<p>Entrez l’énergie libérée par noyau :</p>
+<input type="text" id="energyBnoyau" placeholder="Votre réponse en Joules">
+<button class="btn" onclick="checkEnergyBnoyau()">Vérifier</button>
+<p id="feedbackBnoyau"></p>
+
+<p>2️⃣ Énergie totale libérée</p>
+<code>Énergie<sub>totale</sub> = N × E<sub>noyau</sub></code>
+
+<p>Entrez l’énergie totale libérée :</p>
+<input type="text" id="energyBtotal" placeholder="Votre réponse en Joules">
+<button class="btn" onclick="checkEnergyBtotal()">Vérifier</button>
+<p id="feedbackBtotal"></p>
+
+<p>3️⃣ Vitesse des particules</p>
+<p>E = ½ m v² → v = √(2|E|/m)</p>
+
+<p><em>Note :</em> On utilise la valeur absolue de l’énergie,
+car l’énergie cinétique est toujours positive.</p>
+
+<p>Entrez la vitesse calculée :</p>
+<input type="text" id="speedB" placeholder="Votre réponse en m/s">
+<button class="btn" onclick="checkSpeedB()">Vérifier</button>
+<p id="feedbackB"></p>
+
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="section">
+  <h2>Quiz - Partie C</h2>
+  
+  <div class="quiz-question">
+    <p>1️⃣ Pourquoi les isotopes de Fer ont peu de chance d'être inclus dans une réaction de fusion?</p>
+    <input type="text" id="q1">
+  </div>
+  
+  <div class="quiz-question">
+    <p>2️⃣ Pourquoi la fusion est-elle plus efficace que la fission? Pourquoi l'homme a-t-il choisi la fission pour produire de l'énergie?</p>
+    <input type="text" id="q2">
+  </div>
+  
+  <div class="quiz-question">
+    <p>3️⃣ Expliquez comment ces réactions nucléaires permettent de comprendre l’évolution de l’Univers et la formation des éléments chimiques.</p>
+    <input type="text" id="q3">
+  </div>
+  
+  <button class="btn" onclick="checkQuiz()">Vérifier les réponses</button>
+  <p id="feedback"></p>
+</div>
+
+<!-- ANNEX -->
+<div id="annex" class="section">
+  <h2>Annexes</h2>
+  <p>Cliquez <a href="annex.html" target="_blank">ici</a> pour consulter tous les calculs et réponses détaillés des partie A, B, et C.</p>
+</div>
+
+<script>
+function showSection(sectionId) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+}
+
+// Vérification Partie A
+function checkEnergyA() {
+  const answer = document.getElementById("energyA").value;
+  if(answer.includes("4,5x10^10") || answer.includes("-4,5x10^10") || answer.includes("4500000000000")) {
+    document.getElementById("feedbackA").innerText = "✅ Bravo! Vous avez bien estimé l'énergie totale.";
+  } else {
+    document.getElementById("feedbackA").innerText = "❌ Essayez encore. L'énergie totale est très grande, de l'ordre de 10^10 Joules.";
+  }
+}
+
+function checkSpeedA() {
+  const answer = document.getElementById("speedA").value.replace(",", ".");
+  const value = parseFloat(answer);
+
+  if (!isNaN(value) && value > 1e6 && value < 2e6) {
+    document.getElementById("feedbackSpeedA").innerText =
+      "✅ Bravo! La vitesse des fragments de fission est d’environ 1,25 × 10⁶ m/s.";
+  } else {
+    document.getElementById("feedbackSpeedA").innerText =
+      "❌ Vérifiez votre calcul. La vitesse attendue est de l’ordre de 10⁶ m/s.";
+  }
+}
+
+
+// Vérification Partie B
+function checkEnergyBnoyau() {
+  const answer = document.getElementById("energyBnoyau").value.replace(",", ".");
+  const value = parseFloat(answer);
+
+  if (!isNaN(value) && value > 4e13 && value < 4.8e13) {
+    document.getElementById("feedbackBnoyau").innerText =
+      "✅ Correct ! L’énergie libérée par noyau est de l’ordre de 10¹³ J.";
+  } else {
+    document.getElementById("feedbackBnoyau").innerText =
+      "❌ Vérifiez votre calcul. L’énergie par noyau est de l’ordre de 10¹³ J.";
+  }
+}
+
+function checkEnergyBtotal() {
+  const answer = document.getElementById("energyBtotal").value.replace(",", ".");
+  const value = parseFloat(answer);
+
+  if (!isNaN(value) && value > 7e14 && value < 8.5e14) {
+    document.getElementById("feedbackBtotal").innerText =
+      "✅ Correct ! L’énergie totale est de l’ordre de 10¹⁴ J.";
+  } else {
+    document.getElementById("feedbackBtotal").innerText =
+      "❌ Vérifiez votre calcul. L’énergie totale est de l’ordre de 10¹⁴ J.";
+  }
+}
+
+function checkSpeedB() {
+  const answer = document.getElementById("speedB").value.replace(",", ".");
+  const value = parseFloat(answer);
+
+  if (!isNaN(value) && value > 2.5e8 && value < 3.1e8) {
+    document.getElementById("feedbackB").innerText =
+      "✅ Correct ! La vitesse est de l’ordre de 10⁸ m/s.";
+  } else {
+    document.getElementById("feedbackB").innerText =
+      "❌ Vérifiez votre calcul. La vitesse attendue est de l’ordre de 10⁸ m/s.";
+  }
+}
+
+
+
+// Vérification Quiz Partie C
+function checkQuiz() {
+  const q1 = document.getElementById("q1").value.toLowerCase();
+  const q2 = document.getElementById("q2").value.toLowerCase();
+  const q3 = document.getElementById("q3").value.toLowerCase();
+  let feedback = "";
+
+  feedback += q1.includes("fer") ? "✅ Q1: Bravo! " : "❌ Q1: Essayez encore. ";
+  feedback += q2.includes("efficace") || q2.includes("fission") ? "✅ Q2: Bravo! " : "❌ Q2: Essayez encore. ";
+  feedback += q3.includes("univers") || q3.includes("éléments") ? "✅ Q3: Bravo! " : "❌ Q3: Essayez encore. ";
+
+  document.getElementById("feedback").innerText = feedback;
+}
+</script>
+
+</body>
+</html>
